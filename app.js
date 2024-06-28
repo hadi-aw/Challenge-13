@@ -24,4 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    
+    const displayProduct = (index) => {
+        productsDiv.innerHTML = `
+        <div class="product">
+        <img src="${products[index].image} alt="${products[index].name}" />
+        <h2>${products[index].name}</h2>
+        <p>${products[index].price}</p>
+        <p>${products[index].description}</p>
+        </div>
+        `;
+    };
