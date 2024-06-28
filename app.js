@@ -1,3 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => { 
-    console.log('DOM fully loaded and parsed');
-});
+   const apiUrl = 'https://course-api.com/react-store-products';
+   const loadingDiv = documrnt.getElementById('loading');
+   const errorDiv = document.getElementById('error');
+    const productsDiv = document.getElementById('products');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let products = [];
+    let currentIndex = 0;
+    
