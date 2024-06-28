@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#loading {
+    text-align: center;
+    margin-top: 20%;
+}
+
+.hidden {
+    display: none;
+}
+
+.product {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.nav-button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer
+}
