@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fetchProducts = async () => {
         try{
             const response = await fetch(apiUrl);
-            if (!response.ok) throw new error('Network response was not ok')
+            if (!response.ok) throw new Error('Network response was not ok')
                 products = await response.json();
                 displayProduct(currentIndex);
                 showElements([productsDiv, prevButton, nextButton]);
@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayProduct = (index) => {
         productsDiv.innerHTML = `
         <div class="product">
-        <img src="${products[index].image} alt="${products[index].name}" />
+        <img src="${products[index].image}" alt="${products[index].name}" >
         <h2>${products[index].name}</h2>
-        <p>${products[index].price}</p>
+        <p>$${products[index].price}</p>
         <p>${products[index].description}</p>
         </div>
         `;
@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
         elements.forEach(el => el.classList.remove('hidden'));
     };
 
-    const hideElements = (elements) => {
-        elements.classList.add('hidden');
+    const hideElements = (element) => {
+        element.classList.add('hidden');
     };
 
     const navigateProducts = (direction) => {
