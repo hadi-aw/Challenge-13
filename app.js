@@ -8,4 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let products = [];
     let currentIndex = 0;
+
+    const fetchProducts = async () => {
+        try{
+            const response = await fetch(apiUrl);
+            if (!response.ok) throw new error('Network response was not ok')
+                products = await response.json();
+                displayProduct(currentIndex);
+                showElements([productsDiv, prevButton, nextButton]);
+} catch (error) {
+    errorDiv.textContent = 'Failed to load products. Please try again later.';
+    showElements([errorDiv]);
+        } finally {
+            hideElements([loadingDiv]);
+        }
+    };
+
     
