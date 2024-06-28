@@ -34,3 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         `;
     };
+
+    const showElements = (elements) => {
+        elements.forEach(el => el.classList.remove('hidden'));
+    };
+
+    const hideElements = (elements) => {
+        elements.classList.add('hidden');
+    };
+
+    const navigateProducts = (direction) => {
+        currentIndex = (currentIndex + direction + products.length) % products.length;
+        displayProduct(currentIndex);
+    };
+
+    prevButton.addEventListener('click', () => navigateProducts(-1));
+    nextButton.addEventListener('click', () => navigateProducts(1));
+
+    fetchProducts();
+});
