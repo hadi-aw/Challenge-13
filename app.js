@@ -1,3 +1,4 @@
+//U51313007
 document.addEventListener('DOMContentLoaded', () => { 
    const apiUrl = 'https://course-api.com/react-store-products';
    const loadingDiv = documrnt.getElementById('loading');
